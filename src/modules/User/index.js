@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import OwlCarousel from 'react-owl-carousel2';
-import {BG_IMGS} from "../common/imgur_images";
+import {BG_IMGS} from "../../common/imgur_images";
 
 // Option owl carousel
 const options = {
@@ -29,7 +29,7 @@ const options = {
 class Index extends Component {
     render() {
         return (
-            <> 
+            <>
                 <OwlCarousel options={options} className="welcome-post-sliders owl-carousel">
                     { this.renderSlider() }
                 </OwlCarousel>

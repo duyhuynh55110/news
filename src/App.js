@@ -1,14 +1,12 @@
-import React from 'react';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Index from './modules/index';
+import React from 'react'
+
+// Routes
+import UserRoutes from "./routes/Users.jsx"
 
 function App() {
   return (
     <div className="App">
-        <Header />
-          <Index />
-        <Footer />
+        <UserRoutes />
     </div>
   );
 }
