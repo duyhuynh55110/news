@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import OwlCarousel from 'react-owl-carousel2';
 import {BG_IMGS} from "../../common/imgur_images";
 
+import Post from "./Posts/components/Post";
+
 // Option owl carousel
 const options = {
     nav: true,
@@ -70,6 +72,27 @@ class Index extends Component {
                         </div>
                     </div>
                 </section>
+            
+                <section className="blog_area section_padding_0_80">
+                    <div classname="container">
+                        <div className="row justify-content-center">
+                            <div className="col-12 col-lg-8">
+                                <div className="row">
+
+                                    {/* Single Post */}
+                                    <div className="col-12">
+                                        <Post 
+                                            name="Post first"
+                                            author="John Doe"
+                                            created_at="2020-06-19"
+                                            desc="Sort description for this post"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </>
         );
     }
@@ -93,7 +116,6 @@ class Index extends Component {
             );
         });
 
-        console.log(slider);
         return slider;
     }
 }
