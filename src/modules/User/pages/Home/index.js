@@ -1,8 +1,10 @@
-import React, { Component } from 'react';
-import OwlCarousel from 'react-owl-carousel2';
-import {BG_IMGS} from "../../common/imgur_images";
+import React, { Component } from 'react'
+import OwlCarousel from 'react-owl-carousel2'
+import {BG_IMGS} from "../../../../common/imgur_images"
 
-import Post from "./Posts/components/Post";
+import Post from "../../components/Posts/Single.js"
+import ItemPost from "../../components/Posts/Item.js"
+import BlogSideBar from "../../components/BlogSidebar"
 
 // Option owl carousel
 const options = {
@@ -74,11 +76,10 @@ class Index extends Component {
                 </section>
             
                 <section className="blog_area section_padding_0_80">
-                    <div classname="container">
+                    <div className="container">
                         <div className="row justify-content-center">
                             <div className="col-12 col-lg-8">
                                 <div className="row">
-
                                     {/* Single Post */}
                                     <div className="col-12">
                                         <Post 
@@ -88,9 +89,59 @@ class Index extends Component {
                                             desc="Sort description for this post"
                                         />
                                     </div>
+                                
+                                    {/* Single Post */}
+                                    <div className="col-12 col-md-6">
+                                        <Post 
+                                            name="Post first"
+                                            author="John Doe"
+                                            created_at="2020-06-19"
+                                            desc="Sort description for this post"
+                                        />
+                                    </div>
+
+                                    {/* Single Post */}
+                                    <div className="col-12 col-md-6">
+                                        <Post 
+                                            name="Post first"
+                                            author="John Doe"
+                                            created_at="2020-06-19"
+                                            desc="Sort description for this post"
+                                        />
+                                    </div>
+
+                                    {/* Single Post */}
+                                    <div className="col-12 col-md-6">
+                                        <Post 
+                                            name="Post first"
+                                            author="John Doe"
+                                            created_at="2020-06-19"
+                                            desc="Sort description for this post"
+                                        />
+                                    </div>
+
+                                    {/* Single Post */}
+                                    <div className="col-12 col-md-6">
+                                        <Post 
+                                            name="Post first"
+                                            author="John Doe"
+                                            created_at="2020-06-19"
+                                            desc="Sort description for this post"
+                                        />
+                                    </div>
+
+                                    {/* List Posts */}
+                                    <div className="col-12">
+                                        <ItemPost />
+                                        <ItemPost />
+                                        <ItemPost />
+                                        <ItemPost />
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                       
+                             <BlogSideBar />
+                       </div>
                     </div>
                 </section>
             </>

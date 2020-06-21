@@ -7,15 +7,6 @@ const Header = () => {
             <div id="preloader">
                 <div className="yummy-load"></div>
             </div>
-
-            {/* Background Pattern Swither */}
-            <div id="pattern-switcher">
-                Bg Pattern
-            </div>
-
-            <div id="patter-close">
-                <i className="fa fa-times" aria-hidden="true"></i>
-            </div>
         
             <div className="top_header_area">
                 <div className="container">

@@ -6,7 +6,7 @@ import Header from "../modules/User/components/Header"
 import Footer from "../modules/User/components/Footer"
 
 // Routes
-import routes from "../common/buyer_routes";
+import routes from "../common/user_routes";
 
 const UserRoutes = () => {
     return (

@@ -1,34 +1,33 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-class Post extends Component {
+// Styles
+import "./assets/scss/item.scss"
+
+class ItemPost extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            name: this.props.name,
-            author: this.props.author,
-            created_at: this.props.created_at,
-            desc: this.props.desc,
-        }
     }
 
     render() {
-        return (
-            <div className="single-post wow fadeInUp" data-wow-delay=".2s">
+        return(
+            <div className="list-blog single-post d-sm-flex wow fadeInUpBig" 
+            data-wow-delay=".2s">
                 {/* Post Thumb */}
                 <div className="post-thumb">
-                    <img src="img/blog-img/1.jpg" alt="" />
+                    <img src="img/blog-img/6.jpg" alt="" />
                 </div>
+                
                 {/* Post Content */}
                 <div className="post-content">
                     <div className="post-meta d-flex">
                         <div className="post-author-date-area d-flex">
                             {/* Post Author */}
                             <div className="post-author">
-                                <a href="#"> {this.props.author} </a>
+                                <a href="#">By Marian</a>
                             </div>
                             {/* Post Date */}
                             <div className="post-date">
-                                <a href="#"> {this.props.created_at} </a>
+                                <a href="#">May 19, 2017</a>
                             </div>
                         </div>
                         {/* Post Comment & Share Area */}
@@ -48,16 +47,14 @@ class Post extends Component {
                         </div>
                     </div>
                     <a href="#">
-                        <h2 className="post-headline"> 
-                            {this.props.name}
-                        </h2>
+                        <h4 className="post-headline">The 10 Best Bars By The Seaside In Blackpool, UK</h4>
                     </a>
-                    <p> {this.props.desc} </p>
+                    <p>Tiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
                     <a href="#" className="read-more">Continue Reading..</a>
                 </div>
             </div>
-        );
+        )
     }
-}
+} 
 
-export default Post;
+export default ItemPost
