@@ -8,7 +8,15 @@ class Post extends Component {
             author: this.props.author,
             created_at: this.props.created_at,
             desc: this.props.desc,
+            reading: this.props.reading || null,
         }
+    }
+
+    continueReading = () => {
+        if(this.state.reading != null) 
+            return <a href="#" className="read-more">Continue Reading..</a>
+        else 
+            return this.state.reading    
     }
 
     render() {
@@ -54,7 +62,7 @@ class Post extends Component {
                         </h2>
                     </a>
                     <p> {this.state.desc} </p>
-                    <a href="#" className="read-more">Continue Reading..</a>
+                    { this.continueReading() }
                 </div>
             </div>
         );

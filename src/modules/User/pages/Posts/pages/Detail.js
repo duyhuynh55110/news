@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 
 // Components
-import RelatedPost from "../../components/Posts/Related"
-import BlogSidebar from "../../components/BlogSidebar"
-import BreadCrumb from "../../components/BreadCrumb"
+import RelatedPost from "../../../components/Posts/Related"
+import BlogSidebar from "../../../components/BlogSidebar"
+import BreadCrumb from "../../../components/BreadCrumb"
 
 // Library
 import OwlCarousel from "react-owl-carousel2"
 
 // Styles
-import "./styles.scss"
+import "../assets/scss/styles.scss"
 
 
 // Option owl carousel
@@ -36,7 +36,7 @@ const options = {
     }
 };
 
-class Single extends Component {
+class CategoryDetail extends Component {
     constructor(props) {
         super(props);
 
@@ -261,4 +261,4 @@ class Single extends Component {
     }
 }
 
-export default Single
+export default CategoryDetail

@@ -1,4 +1,44 @@
-import React from 'react';
+import React from 'react'
+import { BrowserRouter as Router, Link, withRouter } from "react-router-dom"
+
+//routes
+import routes from "../../../../common/user_routes"
+
+// render social links
+var renderSocials = () => {
+    // Links 
+    var links = [
+        <i className="fa fa-facebook" aria-hidden="true"></i>,
+        <i className="fa fa-twitter" aria-hidden="true"></i>,
+        <i className="fa fa-linkedin" aria-hidden="true"></i>,
+        <i className="fa fa-skype" aria-hidden="true"></i>,
+        <i className="fa fa-dribbble" aria-hidden="true"></i>,
+    ];
+
+    let html = links.map(e => {
+        return <Link to="#"> {e} </Link>
+    });
+
+    return html;
+}
+
+// render links
+var renderLinks = () => {
+    let links = routes.filter(e => { return e.menu != undefined });
+    
+    // Sort
+    links.sort((a, b) => { return a.menu - b.menu });
+
+    let html = links.map(e => {
+        return (
+            <li className="nav-item">
+               <Link className="nav-link" to={e.path} key={e.key}> {e.name} </Link>
+            </li>
+        )
+    });
+
+    return html;
+}
 
 const Header = () => {
     return (
@@ -14,11 +54,7 @@ const Header = () => {
                         <div className="col-5 col-sm-6">
                             {/*  Top Social bar start */}
                             <div className="top_social_bar">
-                                <a href="#"><i className="fa fa-facebook" aria-hidden="true"></i></a>
-                                <a href="#"><i className="fa fa-twitter" aria-hidden="true"></i></a>
-                                <a href="#"><i className="fa fa-linkedin" aria-hidden="true"></i></a>
-                                <a href="#"><i className="fa fa-skype" aria-hidden="true"></i></a>
-                                <a href="#"><i className="fa fa-dribbble" aria-hidden="true"></i></a>
+                                { renderSocials() }
                             </div>
                         </div>
                         {/*  Login Register Area */}
@@ -69,9 +105,7 @@ const Header = () => {
                             {/* Menu Area Start */}
                             <div className="collapse navbar-collapse justify-content-center" id="yummyfood-nav">
                                 <ul className="navbar-nav" id="yummy-nav">
-                                    <li className="nav-item active">
-                                        <a className="nav-link" href="index.html">Home <span className="sr-only">(current)</span></a>
-                                    </li>
+                                    { renderLinks() }
                                     <li className="nav-item dropdown">
                                         <a className="nav-link dropdown-toggle" href="#" id="yummyDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
                                         <div className="dropdown-menu" aria-labelledby="yummyDropdown">
@@ -81,21 +115,6 @@ const Header = () => {
                                             <a className="dropdown-item" href="static.html">Static Page</a>
                                             <a className="dropdown-item" href="contact.html">Contact</a>
                                         </div>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a className="nav-link" href="#">Features</a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a className="nav-link" href="#">Categories</a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a className="nav-link" href="archive.html">Archive</a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a className="nav-link" href="#">About</a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a className="nav-link" href="contact.html">Contact</a>
                                     </li>
                                 </ul>
                             </div>
@@ -108,4 +127,4 @@ const Header = () => {
     );
 }
 
-export default Header;
+export default withRouter(Header);
