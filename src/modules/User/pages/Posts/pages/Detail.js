@@ -16,8 +16,8 @@ import "../assets/scss/styles.scss"
 const options = {
     nav: true,
     navText: [
-        '<i class="fa fa-angle-left" aria-hidden="true"></i>',
-        '<i class="fa fa-angle-right" aria-hidden="true"></i>'
+        '<i className="fa fa-angle-left" aria-hidden="true"></i>',
+        '<i className="fa fa-angle-right" aria-hidden="true"></i>'
     ],
     rewind: true,
     autoplay: true,
@@ -145,8 +145,8 @@ class CategoryDetail extends Component {
                                         </div>
 
                                         {/* Related Post Area */}
-                                        <div class="related-post-area section_padding_50">
-                                            <h4 class="mb-30">Related post</h4>
+                                        <div className="related-post-area section_padding_50">
+                                            <h4 className="mb-30">Related post</h4>
 
                                             <OwlCarousel                             
                                                 options={options}

@@ -27,15 +27,15 @@ class BreadCrumb extends Component {
                 </div>
 
                 {/* Sub direct */}
-                <div class="breadcumb-nav">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-12">
+                <div className="breadcumb-nav">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-12">
                                 <nav aria-label="breadcrumb">
-                                    <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
-                                        <li class="breadcrumb-item"><a href="#">Archive</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Single Post Blog</li>
+                                    <ol className="breadcrumb">
+                                        <li className="breadcrumb-item"><a href="#"><i className="fa fa-home" aria-hidden="true"></i> Home</a></li>
+                                        <li className="breadcrumb-item"><a href="#">Archive</a></li>
+                                        <li className="breadcrumb-item active" aria-current="page">Single Post Blog</li>
                                     </ol>
                                 </nav>
                             </div>

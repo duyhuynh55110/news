@@ -5,11 +5,6 @@ import CategoriesArea from "../../../components/Areas/CategoriesArea"
 import BreadCrumb from "../../../components/BreadCrumb"
 
 class MemberHome extends Component {
-    constructor(props) {
-        super(props);
-        
-    }
-
     render() {
       return (
         <>

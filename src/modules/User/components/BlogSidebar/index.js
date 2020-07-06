@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 
 class BlogSideBar extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
          return (
             <div className="col-12 col-sm-8 col-md-6 col-lg-4">

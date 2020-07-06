@@ -3,10 +3,6 @@ import React, { Component } from 'react';
 import Item from "../Categories/Item"
 
 class CategoriesArea extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <section className="categories_area clearfix">
