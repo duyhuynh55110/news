@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import OwlCarousel from 'react-owl-carousel2'
-import {BG_IMGS} from "../../../../common/imgur_images"
 
-import Post from "../../components/Posts/Single.js"
-import ItemPost from "../../components/Posts/Item.js"
-import BlogSideBar from "../../components/BlogSidebar"
+import Post from "../../../components/Posts/Single.js"
+import ItemPost from "../../../components/Posts/Item.js"
+import BlogSideBar from "../../../components/BlogSidebar"
+import { connect } from 'react-redux'
 
 // Option owl carousel
 const options = {
@@ -31,11 +31,20 @@ const options = {
 };
 
 class Index extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            posts: [],
+            postsSlider: [],
+        }
+    }
+
     render() {
         return (
             <>
                 <OwlCarousel options={options} className="welcome-post-sliders owl-carousel">
-                    { this.renderSlider() }
+                    { this.renderSliders() }
                 </OwlCarousel>
 
                 <section className="categories_area clearfix" id="about">
@@ -80,55 +89,7 @@ class Index extends Component {
                         <div className="row justify-content-center">
                             <div className="col-12 col-lg-8">
                                 <div className="row">
-                                    {/* Single Post */}
-                                    <div className="col-12">
-                                        <Post 
-                                            name="Post first"
-                                            author="John Doe"
-                                            created_at="2020-06-19"
-                                            desc="Sort description for this post"
-                                        />
-                                    </div>
-                                
-                                    {/* Single Post */}
-                                    <div className="col-12 col-md-6">
-                                        <Post 
-                                            name="Post first"
-                                            author="John Doe"
-                                            created_at="2020-06-19"
-                                            desc="Sort description for this post"
-                                        />
-                                    </div>
-
-                                    {/* Single Post */}
-                                    <div className="col-12 col-md-6">
-                                        <Post 
-                                            name="Post first"
-                                            author="John Doe"
-                                            created_at="2020-06-19"
-                                            desc="Sort description for this post"
-                                        />
-                                    </div>
-
-                                    {/* Single Post */}
-                                    <div className="col-12 col-md-6">
-                                        <Post 
-                                            name="Post first"
-                                            author="John Doe"
-                                            created_at="2020-06-19"
-                                            desc="Sort description for this post"
-                                        />
-                                    </div>
-
-                                    {/* Single Post */}
-                                    <div className="col-12 col-md-6">
-                                        <Post 
-                                            name="Post first"
-                                            author="John Doe"
-                                            created_at="2020-06-19"
-                                            desc="Sort description for this post"
-                                        />
-                                    </div>
+                                    {this.renderPosts()}
 
                                     {/* List Posts */}
                                     <div className="col-12">
@@ -148,27 +109,60 @@ class Index extends Component {
         );
     }
 
-    // Render slider
-    renderSlider = () => {
-        const slider = BG_IMGS.map(img => {
+    /**
+     * Render sliders
+     */
+    renderSliders = () => {
+        const sliders = this.props.postsSlider.map(post => {
             return (
-                 <div className="welcome-single-slide">
-                    <img src={img} alt="" />
+                 <div className="welcome-single-slide" key={"post-slider--" + post.id}>
+                    <img src={post.image} alt="" />
                     <div className="project_title">
                         <div className="post-date-commnents d-flex">
                             <a href="#">May 19, 2017</a>
                             <a href="#">5 Comment</a>
                         </div>
                         <a href="#">
-                            <h5>“I’ve Come and I’m Gone”: A Tribute to Istanbul’s Street</h5>
+                            <h5> {post.name} </h5>
                         </a>
                     </div>
                 </div>
             );
         });
 
-        return slider;
+        return sliders;
+    }
+
+    /**
+     * Render posts
+     */
+    renderPosts = () => {
+        const posts = this.props.posts.map((post, i) => {
+            return <div className={(i > 0)?"col-12 col-md-6":"col-12"}>
+                        <Post 
+                            name={post.name}
+                            image={post.image}
+                            author="John Doe"
+                            created_at={post.created_at}
+                            key={"post--" + post.id}
+                        />
+                    </div>
+        });
+
+        return posts;
     }
 }
 
-export default Index
+/**
+ * Get data from redux store to props Index components
+ * 
+ * @param {*} state 
+ */
+var mapStateToProp = (state) => {
+    return {
+        posts: state.posts,
+        postsSlider: state.postsSlider,
+    }
+}
+
+export default connect(mapStateToProp)(Index)

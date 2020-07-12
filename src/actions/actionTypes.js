@@ -1,0 +1,10 @@
+// CRUD actions
+const CREATE = "CREATE";
+const READ = "READ";
+const UPDATE = "UPDATE";
+const DELETE = "DELETE";
+
+// POSTS 
+const POST_SLIDER = "POSTS_SLIDER";
+
+export {CREATE, UPDATE, DELETE, READ, POST_SLIDER}

@@ -5,9 +5,10 @@ class Post extends Component {
         super(props);
         this.state = {
             name: this.props.name,
+            image: this.props.image,
             author: this.props.author,
             created_at: this.props.created_at,
-            desc: this.props.desc,
+            desc: this.props.desc || null,
             reading: this.props.reading || null,
         }
     }
@@ -24,7 +25,7 @@ class Post extends Component {
             <div className="single-post wow fadeInUp" data-wow-delay=".2s">
                 {/* Post Thumb */}
                 <div className="post-thumb">
-                    <img src="img/blog-img/1.jpg" alt="" />
+                    <img src={this.state.image} alt="" />
                 </div>
 
                 {/* Post Content */}
@@ -57,9 +58,9 @@ class Post extends Component {
                         </div>
                     </div>
                     <a href="#">
-                        <h2 className="post-headline"> 
+                        <h4 className="post-headline"> 
                             {this.state.name}
-                        </h2>
+                        </h4>
                     </a>
                     <p> {this.state.desc} </p>
                     { this.continueReading() }

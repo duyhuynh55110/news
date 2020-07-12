@@ -3,7 +3,7 @@ import MemberHome from "../modules/User/pages/Members/pages/Home"
 import MemberDetail from "../modules/User/pages/Members/pages/Detail"
 
 import About from "../modules/User/pages/About"
-import Home from "../modules/User/pages/Home"
+import Home from "../modules/User/pages/Home/pages"
 
 const ROUTES = [
     {
