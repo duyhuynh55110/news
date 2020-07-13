@@ -581,11 +581,14 @@ li {
     position: relative;
     z-index: 1;
     margin-bottom: 30px;
-}
-
-.single_catagory img {
+    overflow: hidden;
+    max-height: 200px;
     border-radius: 20px;
 }
+
+/* .single_catagory img {
+    border-radius: 20px;
+} */
 
 .catagory-title {
     width: 200px;
@@ -694,7 +697,7 @@ li {
 }
 
 .single-post p {
-    color: #51545f;
+    color: #b8b9b9;
 }
 
 .single-post .read-more {
@@ -965,6 +968,14 @@ li {
 
 .popular-post-widget .single-populer-post .post-content {
     margin-left: 10px;
+}
+
+.popular-post-widget .single-populer-post .post-content h6 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
 .popular-post-widget .single-populer-post .post-content > p {

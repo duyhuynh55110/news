@@ -14,7 +14,7 @@ class ItemPost extends Component {
             data-wow-delay=".2s">
                 {/* Post Thumb */}
                 <div className="post-thumb">
-                    <img src="img/blog-img/6.jpg" alt="" />
+                    <img src={this.props.img} alt="" />
                 </div>
                 
                 {/* Post Content */}
@@ -23,7 +23,7 @@ class ItemPost extends Component {
                         <div className="post-author-date-area d-flex">
                             {/* Post Author */}
                             <div className="post-author">
-                                <a href="#">By Marian</a>
+                                <a href="#"> {this.props.author} </a>
                             </div>
                             {/* Post Date */}
                             <div className="post-date">
@@ -47,10 +47,9 @@ class ItemPost extends Component {
                         </div>
                     </div>
                     <a href="#">
-                        <h4 className="post-headline">The 10 Best Bars By The Seaside In Blackpool, UK</h4>
+                        <h4 className="post-headline"> {this.props.name} </h4>
                     </a>
                     <p>Tiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
-                    <a href="#" className="read-more">Continue Reading..</a>
                 </div>
             </div>
         )

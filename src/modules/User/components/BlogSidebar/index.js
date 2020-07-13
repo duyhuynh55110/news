@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+// Helper
+import {formatNumber} from "../../../../utils"
 
 class BlogSideBar extends Component {
+    constructor(props) {
+        super(props);
+    }
+    
     render() {
          return (
             <div className="col-12 col-sm-8 col-md-6 col-lg-4">
@@ -37,58 +45,9 @@ class BlogSideBar extends Component {
                         <div className="widget-title text-center">
                             <h6>Populer Post</h6>
                         </div>
-                        {/* Single Popular Post */}
-                        <div className="single-populer-post d-flex">
-                            <img src="img/sidebar-img/1.jpg" alt="" />
-                            <div className="post-content">
-                                <a href="#">
-                                    <h6>Top Wineries To Visit In England</h6>
-                                </a>
-                                <p>Tuesday, October 3, 2017</p>
-                            </div>
-                        </div>
-                        {/* Single Popular Post */}
-                        <div className="single-populer-post d-flex">
-                            <img src="img/sidebar-img/2.jpg" alt="" />
-                            <div className="post-content">
-                                <a href="#">
-                                    <h6>The 8 Best Gastro Pubs In Bath</h6>
-                                </a>
-                                <p>Tuesday, October 3, 2017</p>
-                            </div>
-                        </div>
-                        {/* Single Popular Post */}
-                        <div className="single-populer-post d-flex">
-                            <img src="img/sidebar-img/3.jpg" alt="" />
-                            <div className="post-content">
-                                <a href="#">
-                                    <h6>Zermatt Unplugged the best festival</h6>
-                                </a>
-                                <p>Tuesday, October 3, 2017</p>
-                            </div>
-                        </div>
-                        {/* Single Popular Post */}
-                        <div className="single-populer-post d-flex">
-                            <img src="img/sidebar-img/4.jpg" alt="" />
-                            <div className="post-content">
-                                <a href="#">
-                                    <h6>Harrogate's Top 10 Independent Eats</h6>
-                                </a>
-                                <p>Tuesday, October 3, 2017</p>
-                            </div>
-                        </div>
-                        {/* Single Popular Post */}
-                        <div className="single-populer-post d-flex">
-                            <img src="img/sidebar-img/5.jpg" alt="" />
-                            <div className="post-content">
-                                <a href="#">
-                                    <h6>Eating Out On A Budget In Oxford</h6>
-                                </a>
-                                <p>Tuesday, October 3, 2017</p>
-                            </div>
-                        </div>
+                        { this.renderPosts() }
                     </div>
-
+                    
                     {/* Single Widget Area */}
                     <div className="single-widget-area add-widget text-center">
                         <div className="add-widget-area">
@@ -122,6 +81,31 @@ class BlogSideBar extends Component {
             </div>
          );
     }
+
+    /**
+     * Render posts
+     */
+    renderPosts = () => {
+        let posts = this.props.postsPopular.filter((post, i) => {return i < 5}).map((post, i) => {
+            return <div className="single-populer-post d-flex">
+                        <img src={post.img} alt="" />
+                        <div className="post-content">
+                            <a href="#">
+                                <h6>{post.name}</h6>
+                            </a>
+                            <p>{formatNumber(post.view)}</p>
+                        </div>
+                    </div>
+        });
+
+        return posts;
+    }
 }
 
-export default BlogSideBar
+var mapStateToProps = (state) => {
+    return {
+        postsPopular: state.postsPopular,
+    }
+}
+
+export default connect(mapStateToProps)(BlogSideBar)

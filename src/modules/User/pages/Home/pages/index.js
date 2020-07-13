@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import OwlCarousel from 'react-owl-carousel2'
 
-import Post from "../../../components/Posts/Single.js"
-import ItemPost from "../../../components/Posts/Item.js"
+//Components
+import Category from "../../../components/Categories/Item"
+import Post from "../../../components/Posts/Single"
+import ItemPost from "../../../components/Posts/Item"
 import BlogSideBar from "../../../components/BlogSidebar"
 import { connect } from 'react-redux'
 
@@ -33,11 +35,6 @@ const options = {
 class Index extends Component {
     constructor(props) {
         super(props);
-
-        this.state = {
-            posts: [],
-            postsSlider: [],
-        }
     }
 
     render() {
@@ -50,36 +47,7 @@ class Index extends Component {
                 <section className="categories_area clearfix" id="about">
                     <div className="container">
                         <div className="row">
-                            <div className="col-12 col-md-6 col-lg-4">
-                                <div className="single_catagory wow fadeInUp" data-wow-delay=".3s">
-                                    <img src="img/catagory-img/1.jpg" alt="" />
-                                    <div className="catagory-title">
-                                        <a href="#">
-                                            <h5>Food</h5>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-12 col-md-6 col-lg-4">
-                                <div className="single_catagory wow fadeInUp" data-wow-delay=".6s">
-                                    <img src="img/catagory-img/2.jpg" alt="" />
-                                    <div className="catagory-title">
-                                        <a href="#">
-                                            <h5>Cooking</h5>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-12 col-md-6 col-lg-4">
-                                <div className="single_catagory wow fadeInUp" data-wow-delay=".9s">
-                                    <img src="img/catagory-img/3.jpg" alt="" />
-                                    <div className="catagory-title">
-                                        <a href="#">
-                                            <h5>Life Style</h5>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
+                            { this.renderCategories() }
                         </div>
                     </div>
                 </section>
@@ -89,15 +57,7 @@ class Index extends Component {
                         <div className="row justify-content-center">
                             <div className="col-12 col-lg-8">
                                 <div className="row">
-                                    {this.renderPosts()}
-
-                                    {/* List Posts */}
-                                    <div className="col-12">
-                                        <ItemPost />
-                                        <ItemPost />
-                                        <ItemPost />
-                                        <ItemPost />
-                                    </div>
+                                    { this.renderPosts() }                 
                                 </div>
                             </div>
                        
@@ -110,13 +70,29 @@ class Index extends Component {
     }
 
     /**
+     * Render categories
+     */
+    renderCategories = () => {
+        const categories = this.props.categories.map(category => {
+            return <Category 
+                        path="#"
+                        name={category.name}
+                        img={category.img}
+                        key={"category--" + category.id}
+                />
+        })
+
+        return categories;
+    }
+
+    /**
      * Render sliders
      */
     renderSliders = () => {
         const sliders = this.props.postsSlider.map(post => {
             return (
                  <div className="welcome-single-slide" key={"post-slider--" + post.id}>
-                    <img src={post.image} alt="" />
+                    <img src={post.img} alt="" />
                     <div className="project_title">
                         <div className="post-date-commnents d-flex">
                             <a href="#">May 19, 2017</a>
@@ -137,19 +113,35 @@ class Index extends Component {
      * Render posts
      */
     renderPosts = () => {
-        const posts = this.props.posts.map((post, i) => {
+        const posts = this.props.posts.filter((post, i) => {return i < 5}).map((post, i) => {
             return <div className={(i > 0)?"col-12 col-md-6":"col-12"}>
                         <Post 
                             name={post.name}
-                            image={post.image}
+                            img={post.img}
                             author="John Doe"
                             created_at={post.created_at}
                             key={"post--" + post.id}
                         />
-                    </div>
+                    </div> 
+        });
+        const listPosts = this.props.posts.filter((post, i) => {return i > 5}).map((post, i) => {
+            return <ItemPost 
+                        name={post.name}
+                        img={post.img}
+                        author="John Doe"
+                        created_at={post.created_at}
+                        key={"post--" + post.id}
+                />
         });
 
-        return posts;
+        return (
+            <>
+                {posts}
+                <div className="col-12">
+                    {listPosts}
+                </div>
+            </>
+        );
     }
 }
 
@@ -158,11 +150,12 @@ class Index extends Component {
  * 
  * @param {*} state 
  */
-var mapStateToProp = (state) => {
+var mapStateToProps = (state) => {
     return {
         posts: state.posts,
         postsSlider: state.postsSlider,
+        categories: state.categories,
     }
 }
 
-export default connect(mapStateToProp)(Index)
+export default connect(mapStateToProps)(Index)

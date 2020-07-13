@@ -5,7 +5,7 @@ class Post extends Component {
         super(props);
         this.state = {
             name: this.props.name,
-            image: this.props.image,
+            img: this.props.img,
             author: this.props.author,
             created_at: this.props.created_at,
             desc: this.props.desc || null,
@@ -25,7 +25,7 @@ class Post extends Component {
             <div className="single-post wow fadeInUp" data-wow-delay=".2s">
                 {/* Post Thumb */}
                 <div className="post-thumb">
-                    <img src={this.state.image} alt="" />
+                    <img src={this.state.img} alt="" />
                 </div>
 
                 {/* Post Content */}
