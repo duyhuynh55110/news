@@ -1,0 +1,107 @@
+@import "./common/var.scss";
+@import "./common/mixin.scss";
+
+h1, h2, h3, h4, h5, h6, p {
+    color: $white_01;
+}
+
+// Header
+.top_header_area {
+    border: unset;
+    .top_social_bar > a {
+        color: $white_01;
+    }
+
+    .signup-search-area a  {
+        color: $white_01;
+    }
+}
+.header_area, .footer_area {
+    .yummy-logo {
+        img {
+            max-width: 300px;
+        }
+    }
+    .navbar.navbar-expand-lg .navbar-nav .nav-link{
+        color: $white_01;
+    }
+}
+
+// Body
+body {
+    background: url(../img/background/body.jpg);
+}
+
+.single_catagory {
+    .catagory-title {
+        background: $black_01;
+    
+        h5 {
+            color: $white_01;
+        }
+    }
+
+    &:hover {
+        .catagory-title {
+            background-color: $pink_blackpink;
+        }
+    }
+}
+
+h4.post-headline {
+    color: $white_01;
+}
+
+.add-widget {
+    .add-text {
+        a.add-btn {
+            border: 1px solid $pink_03;
+            color: $pink_03;
+        }
+    }
+} 
+
+.newsletter-form {
+    button {
+        background: $pink_blackpink;
+    }
+}
+
+.welcome-single-slide {
+    .project_title {
+        @include background-opacity($pink_blackpink, 0.8);
+    }
+}
+
+.widget-title {
+    &>h6 {
+        background: $pink_blackpink;
+    }
+}
+
+.single-post {
+    h2, h4 {
+        &:hover {
+            color: $pink_blackpink;
+        }
+    }
+}
+
+.navbar.navbar-expand-lg {
+    .navbar-nav {
+        .nav-item.active {
+            .nav-link {
+                color: $pink_blackpink;
+            }
+        }
+        .nav-link {
+            &:hover {
+                color: $pink_blackpink;
+            }
+        } 
+    }
+}
+
+#scrollUp { background: $pink_02; }
+
+

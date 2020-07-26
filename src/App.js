@@ -1,4 +1,5 @@
 import React from 'react'
+import "./scss/styles.scss"
 
 // Routes
 import UserRoutes from "./routes/Users.jsx"

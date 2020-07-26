@@ -39,7 +39,7 @@ const INITIAL_STATE = [
     {
         id: "6",
         name: "Rose: How you like that?",
-        img: "https://i.pinimg.com/564x/cc/b2/ab/ccb2ab1e0cd75d74e2a5a4862815df2e.jpg",
+        img: "https://i.pinimg.com/564x/7c/d2/d8/7cd2d82448abb29a8776adca34606e2a.jpg",
         created_at: "2020-07-12",
         type: POST_SLIDER,
         view: 10,
@@ -47,7 +47,7 @@ const INITIAL_STATE = [
     {
         id: "7",
         name: "Joy beauty at MAMA 2019",
-        img: "https://file.tinnhac.com/resize/600x-/music/2018/04/09/20180409115116-d0dd.jpg",
+        img: "https://i.pinimg.com/564x/07/7c/ea/077cea589313e3ce0c18cae3778f1ae2.jpg",
         created_at: "2020-07-12",
         type: POST_SLIDER,
         view: 13,
@@ -55,7 +55,7 @@ const INITIAL_STATE = [
     {
         id: "8",
         name: "Irene with Glass iconic",
-        img: "https://i.pinimg.com/originals/21/95/ba/2195baa4baf3b1823746d3e0af7191d7.jpg",
+        img: "https://i.pinimg.com/564x/ea/95/23/ea9523345230967ea014a08c4682a2b6.jpg",
         created_at: "2020-07-12",
         type: POST_SLIDER,
         view: 2,
@@ -63,7 +63,7 @@ const INITIAL_STATE = [
     {
         id: "9",
         name: "Solar at MAMA 2019. She is greatest!!!",
-        img: "https://pbs.twimg.com/media/ELFJ2-lUYAA94Bq.jpg",
+        img: "https://i.pinimg.com/564x/e9/ff/ca/e9ffca1297b66e4900b103cf2ef820af.jpg",
         created_at: "2020-07-12",
         type: POST_SLIDER,
         view: 1,

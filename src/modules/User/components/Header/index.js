@@ -1,7 +1,10 @@
 import React from 'react'
 import { BrowserRouter as Router, Link, withRouter } from "react-router-dom"
 
-//routes
+// images
+import logo from "../../../../img/logo/main.png"
+
+// routes
 import routes from "../../../../common/user_routes"
 
 // render social links
@@ -93,7 +96,9 @@ const Header = () => {
                         {/* Logo Area Start */}
                         <div className="col-12">
                             <div className="logo_area text-center">
-                                <a href="index.html" className="yummy-logo">Yummy Blog</a>
+                                <a href="index.html" className="yummy-logo">
+                                    <img src={logo} />
+                                </a>
                             </div>
                         </div>
                     </div>

@@ -1,5 +1,8 @@
 import React from 'react';
 
+// images
+import logo from "../../../../img/logo/main.png"
+
 const Footer = () => {
     return (
         <>   
@@ -10,7 +13,9 @@ const Footer = () => {
                         <div className="footer-content">
                             {/* Logo Area Start */}
                             <div className="footer-logo-area text-center">
-                                <a href="index.html" className="yummy-logo">Yummy Blog</a>
+                                <a href="index.html" className="yummy-logo"> 
+                                    <img src={logo} /> 
+                                </a>
                             </div>
                             {/* Menu Area Start */}
                             <nav className="navbar navbar-expand-lg">
