@@ -33,7 +33,7 @@ class BreadCrumb extends Component {
                             <div className="col-12">
                                 <nav aria-label="breadcrumb">
                                     <ol className="breadcrumb">
-                                        <li className="breadcrumb-item"><a href="#"><i className="fa fa-home" aria-hidden="true"></i> Home</a></li>
+                                        <li className="breadcrumb-item"><a href="#"><i className="fa fa-home" aria-hidden="true"></i> Home </a></li>
                                         <li className="breadcrumb-item"><a href="#">Archive</a></li>
                                         <li className="breadcrumb-item active" aria-current="page">Single Post Blog</li>
                                     </ol>

@@ -590,32 +590,6 @@ li {
     border-radius: 20px;
 } */
 
-.catagory-title {
-    width: 200px;
-    height: 50px;
-    background-color: #fff;
-    position: absolute;
-    top: 50%;
-    text-align: center;
-    border-radius: 30px;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    -webkit-transition-duration: 500ms;
-    transition-duration: 500ms;
-}
-
-.single_catagory:hover .catagory-title {
-    background-color: #fc6c3f;
-}
-
-.catagory-title a > h5 {
-    margin-bottom: 0;
-    line-height: 50px;
-    -webkit-transition-duration: 500ms;
-    transition-duration: 500ms;
-}
-
 .single_catagory:hover .catagory-title a > h5 {
     color: #fff;
 }
@@ -1086,7 +1060,7 @@ li {
 
 .breadcumb-area {
     width: 100%;
-    height: 200px;
+    height: 250px;
     background-position: center center;
     background-size: cover;
     position: relative;

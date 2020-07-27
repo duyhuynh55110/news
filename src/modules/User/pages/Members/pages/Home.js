@@ -8,7 +8,7 @@ class MemberHome extends Component {
     render() {
       return (
         <>
-            <BreadCrumb name="Member Name" />
+            <BreadCrumb name="Members" />
             <CategoriesArea />
         </>
       )

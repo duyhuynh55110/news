@@ -32,11 +32,65 @@ body {
     background: url(../img/background/body.jpg);
 }
 
+.breadcumb-nav {
+    .breadcrumb {
+        .breadcrumb-item {
+            &.active {
+                color: $white_01;
+            }
+
+            a {
+                color: $gray_01;
+            }
+        }
+    }
+}
+
 .single_catagory {
+    .catagory-title, .catagory-title2 {
+        position: absolute;
+        text-align: center;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        -webkit-transition-duration: 500ms;
+        transition-duration: 500ms;
+
+        a > h5 {
+            margin-bottom: 0;
+            -webkit-transition-duration: 500ms;
+            transition-duration: 500ms;
+        }
+    }
     .catagory-title {
+        width: 200px;
+        height: 50px;
+        top: 50%;
+        border-radius: 30px;
+        background-color: #fff;
         background: $black_01;
     
         h5 {
+            line-height: 50px;
+            color: $white_01;
+        }
+    }
+
+    .catagory-title2 {
+        @include background-linear-gradient(0, $pink_blackpink, $transparent 75%);
+        height: 70px;
+        position: absolute;
+        bottom: -35px;
+        width: 100%;
+        border-radius: 0;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        -webkit-transition-duration: 500ms;
+        transition-duration: 500ms;
+
+        h5 {
+            line-height: 90px;
             color: $white_01;
         }
     }
